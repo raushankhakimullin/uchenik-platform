@@ -21,7 +21,7 @@ export function AuthProvider({ children }: {children: ReactNode}) {
 export const useAuth=()=>useContext(AuthContext);
 export function ConfigGate({children}:{children:ReactNode}) {
   const pathname=usePathname();
-  if (!configured && pathname!=='/') return <div className="config"><div><span className="eyebrow goldtext">Настройка платформы</span><h1>Подключите Supabase.</h1><p>Для работы школы нужны реальные учётные записи и данные. Добавьте <code>NEXT_PUBLIC_SUPABASE_URL</code> и <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> в окружение проекта, затем перезапустите приложение. Демо-данные и фиктивный вход не используются.</p></div></div>;
+  if (!configured && pathname!=='/') return <div className="config"><div><span className="eyebrow goldtext">Настройка платформы</span><h1>Подключите Supabase.</h1><p>Для работы школы нужны реальные учётные записи и данные. Добавьте <code>NEXT_PUBLIC_SUPABASE_URL</code> и <code>NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code> в окружение проекта, затем перезапустите приложение. Демо-данные и фиктивный вход не используются.</p></div></div>;
   return <>{children}</>;
 }
 export function Loading() { return <div className="page"><div className="skeleton" style={{width:130}}/><div className="skeleton" style={{width:'55%',height:43}}/><div className="skeleton" style={{width:'100%',height:220,marginTop:40}}/></div>; }
