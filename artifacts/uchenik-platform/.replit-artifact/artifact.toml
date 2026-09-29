@@ -1,0 +1,34 @@
+kind = "web"
+previewPath = "/"
+title = "НЕ ПРИХОЖАНИН. УЧЕНИК."
+description = "Русскоязычная платформа ученичества Sons of God на Next.js и Supabase: школа ученика, действия, люди и духовные группы."
+version = "1.0.0"
+id = "artifacts/uchenik-platform"
+router = "path"
+
+[[services]]
+name = "web"
+paths = ["/"]
+localPort = 22382
+
+[services.development]
+run = "pnpm --filter @workspace/uchenik-platform run dev"
+
+[services.production]
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/uchenik-platform", "run", "build"]
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+args = ["pnpm", "--filter", "@workspace/uchenik-platform", "run", "serve"]
+[services.production.run.env]
+PORT = "22382"
+NODE_ENV = "production"
+
+[services.production.health.startup]
+path = "/"
+
+[services.env]
+PORT = "22382"
+BASE_PATH = "/"

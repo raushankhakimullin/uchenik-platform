@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function NotFound(){return <div className="config"><div><span className="eyebrow goldtext">404 / НЕ НАЙДЕНО</span><h1>Этот путь не найден.</h1><p>Возможно, ссылка изменилась. Вернись к началу и продолжи путь.</p><Link href="/" className="btn gold">На главную</Link></div></div>}
